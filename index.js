@@ -1,3 +1,4 @@
+'user strict';
 var template = require('babel-template');
 var build = template(';(function () {\nBODY;\n})();')
 
