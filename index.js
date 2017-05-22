@@ -8,12 +8,12 @@ module.exports = function (babel) {
 		visitor: {
 			Program: {
 				enter: function (path, state) {
-					const extensions = state && state.opts && state.opts.extensions
-					const reference = state && state.file && state.file.opts.filename
-					const filepath = reference.split('?')[0]
+					var extensions = state && state.opts && state.opts.extensions
+					var reference = state && state.file && state.file.opts.filename
+					var filepath = reference.split('?')[0]
 					// console.log('filepath', filepath)
 
-					let run = false
+					var run = false
 					for (ext of extensions) {
 						run = run || filepath.match(ext)
 					}
